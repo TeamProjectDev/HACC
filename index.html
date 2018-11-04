@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <title>Project Grass</title>
+</head>
+<body>
+    
+    <div id="root">
+
+        <div id="header">
+
+            <span id="projectDev" v-html="header.projectDev"> </span>
+
+        </div>
+
+        <span id="intro">
+            
+            <div id="imageContainer" v-bind:style="{ 'background-image': 'url(' + showcase.images[showcase.currentCounter].image + ')' }">
+                
+                <div id="titleContainer">
+
+                    <div id="logo" v-html="title.logo"></div>
+                    <h3 id="title">{{title.name}}</h3>
+                    <h4 id="type">{{title.type}}</h4>
+                
+                </div>
+                <!-- <p id="leftArrow" v-html="showcase.arrow" @click="prevImage()"></p>
+                <p id="rightArrow" v-html="showcase.arrow" @click="nextImage()"></p> -->
+           
+            </div>
+
+        </span>
+
+        <div id="mainBody">
+            
+            <div id="home">
+                
+                <h2 id="slogan">{{main.slogan}}</h2>
+                <h3 id="sloganDetail">{{main.sloganDetail}}</h3>
+
+                <download :text="main.downloadText" :link="main.downloadLink"></download>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="magic.js"></script>
+</body>
+</html>
