@@ -15,11 +15,18 @@
 
             <span id="projectDev" v-html="header.projectDev"> </span>
 
+            <span id="misc">
+
+                <p class="options">{{header.other}}</p>
+                <p class="options">{{header.team}}</p>
+            
+            </span>
+
         </div>
 
         <span id="intro">
             
-            <div id="imageContainer" v-bind:style="{ 'background-image': 'url(' + showcase.images[showcase.currentCounter].image + ')' }">
+            <div id="imageContainer" v-bind:style="{ 'background-image': 'url(' + title.showCaseImage + ')' }">
                 
                 <div id="titleContainer">
 
@@ -28,8 +35,6 @@
                     <h4 id="type">{{title.type}}</h4>
                 
                 </div>
-                <!-- <p id="leftArrow" v-html="showcase.arrow" @click="prevImage()"></p>
-                <p id="rightArrow" v-html="showcase.arrow" @click="nextImage()"></p> -->
            
             </div>
 
@@ -41,8 +46,36 @@
                 
                 <h2 id="slogan">{{main.slogan}}</h2>
                 <h3 id="sloganDetail">{{main.sloganDetail}}</h3>
+                
+                <div id="showCase" 
+                v-bind:style="{ 'background-image': 'url(' + showcase.images[showcase.currentCounter].image + ')' }">
+
+                    <p id="leftArrow" v-html="showcase.leftArrow" @click="prevImage()"></p>
+                    <p id="rightArrow" v-html="showcase.rightArrow" @click="nextImage()"></p> 
+                    
+                    <div id="showCaseText">
+                        <p>{{showcase.images[showcase.currentCounter].text}}</p>
+                    </div>
+
+                </div>
 
                 <download :text="main.downloadText" :link="main.downloadLink"></download>
+
+            </div>
+
+            <div id="discover">
+
+                <h3 id="discoverSlogan">{{discover.slogan}}</h3>
+
+                <h4 id="recent">{{discover.recent}}</h4>
+
+                <div id="discoverShowCase" v-for="uploads in uploads()" 
+                v-html="template(uploads.discoveryLocation,uploads.discoveryDate,uploads.user,uploads.discoveredPlant,uploads.description)" 
+                >
+
+
+
+                </div>
 
             </div>
 
@@ -51,6 +84,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="templateAPI.js"></script>
     <script src="magic.js"></script>
 </body>
 </html>

@@ -23,7 +23,6 @@ body,html,#root {
     top: 0%;
     background-color: rgba(0,0,0,0.2);
     flex-direction: row;
-    justify-content: space-evenly;
 }
 
 #projectDev {
@@ -36,6 +35,18 @@ body,html,#root {
     height: 100%;
 }
 
+#misc {
+    display:inline-flex;
+    flex-direction: row;
+
+}
+
+.options {
+    font-size: 1.5rem;
+    color: whitesmoke;
+    margin: auto 1rem;
+}
+
 #intro {
     width: 100%;
     height: 100%;
@@ -44,7 +55,7 @@ body,html,#root {
 #mainBody {
     display: inline-flex;
     width: 100%;
-    height: 100%;
+    height: 200%;
     flex-direction: column;
 }
 
@@ -87,7 +98,21 @@ body,html,#root {
 }
 
 #leftArrow,#rightArrow {
-    display: none;
+    display:inline-block;
+    width: 2rem;
+    height: 2rem;
+    margin: 1rem;
+    position: absolute;
+    top: 35%;
+    font-size: 1.5rem;
+    text-align: center;
+    color: whitesmoke;
+    border: 3px solid whitesmoke;
+    border-radius: 100%;
+}
+
+#rightArrow {
+    right: 0%;
 }
 
 #home {
@@ -109,9 +134,34 @@ body,html,#root {
     margin: 3rem 0 2rem 0;
 }
 
+#showCase {
+    display: table;
+    position: relative;
+    width: 38rem;
+    height: 19rem;
+    margin: 1rem auto;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#showCaseText {
+    width: 100%;
+    height: 20%;
+    bottom: 0;
+    position: absolute;
+    text-align: center;
+    background: rgba(0,0,0,0.15);
+}
+
+#showCaseText > p {
+    font-size: 1.3rem;
+    margin: 0;
+}
+
 .button {
     display: table;
-    margin: 5rem auto 0 auto;
+    margin: 2rem auto 0 auto;
     padding: 1rem 2rem;
     color: whitesmoke;
     background-color: #5ED4FF;
@@ -126,13 +176,32 @@ body,html,#root {
     text-decoration: none;
 }
 
-/* .titleStuff {
-    display: inline-flex;
-    flex-direction: row;
+#discover {
     margin: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(94,212,255);
+    background: linear-gradient(0deg, rgba(94,212,255,1) 0%, rgba(242,242,242,1) 100%);
 }
 
-.titleName,.titleImage{
-    display: inline-block;
-    margin: 0;
-} */
+#discoverSlogan {
+    font-size: 3rem;
+    text-align: center;
+    margin: 3rem 0 2rem 0;
+    color: #4c4c4c;
+}
+
+#discoverShowCase {
+    height: 50%;
+    width: 100%;
+}
+
+#recent {
+    text-align: center;
+}
+
+.cardHolder {
+    display: none;
+    width: 40rem;
+    height: 100%;
+}
