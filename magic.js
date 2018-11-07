@@ -24,6 +24,7 @@ Vue.component('download', {
 var app = new Vue({
     el:'#root',
     data: {
+        signedIn: false,
         header: {
             projectDev: GetImage('images/scuffed23.png'),
             other: 'other Products',
@@ -58,6 +59,16 @@ var app = new Vue({
             slogan: 'Discover A Expanding Community',
             recent: 'Recent Discoveries around Oahu',
 
+        },
+        signUp : {
+            slogan : 'Sign Up Today',
+            forms : [
+                {name:'First Name',type:'text'},
+                {name:'Last Name',type:'text'},
+                {name:'Email Address',type:'email'},
+                {name:'Username',type:'username'},
+                {name:'Password',type:'password'}
+            ] 
         },
         forum: {
             start: 'Forums',

@@ -12,6 +12,21 @@
 
     <div id="root">
 
+            <div id="headerUpload">
+
+            <span id="projectDev" v-html="header.projectDev"> </span>
+        
+            <span id="misc">
+        
+                <p class="options">{{header.other}}</p>
+                <p class="options">{{header.team}}</p>
+                <a class="options" href="pages/forum.html">{{header.forum}}</a>
+                <a class="options" href="upload.html">{{header.upload}}</a>
+                <input id="search" class="options" type="text" placeholder="Search..." />
+            </span>
+        
+        </div>
+
         <div id="uploadContainer">
 
             <span class="uploaded" v-for="upload in uploads()" v-html="uploadTemplate(upload.user,upload.photo,upload.description)"> </span>
