@@ -8,26 +8,28 @@
         <menu>
             <group android:checkableBehavior="single">
                 <item
+                    android:background="@android:drawable/editbox_background"
                     android:id="@+id/nav_camera"
-                    android:icon="@drawable/ic_menu_camera"
-                    android:title="Identify Plants" />
+                    android:icon="@drawable/leafittous"
+                    android:iconTint="@color/colorFlashWhite"
+                    android:title="Leaf it to Me" />
                 <item
                     android:id="@+id/nav_AR"
-                    android:icon="@drawable/ic_menu_camera"
-                    android:title="Augmented Plants" />
+                    android:icon="@drawable/cube"
+                    android:title="Launch PlantAR" />
                 <item
                     android:id="@+id/nav_gallery"
-                    android:icon="@drawable/ic_menu_gallery"
+                    android:icon="@drawable/gallery"
                     android:title="Your Gallery" />
                 <item
                     android:id="@+id/nav_slideshow"
-                    android:icon="@drawable/ic_menu_slideshow"
+                    android:icon="@drawable/openbox"
                     android:title="Discoveries" />
             </group>
         </menu>
     </item>
 
-    <item android:title="@string/pollination">
+    <item android:title="Pollinate">
         <menu>
             <item
                 android:id="@+id/nav_share"

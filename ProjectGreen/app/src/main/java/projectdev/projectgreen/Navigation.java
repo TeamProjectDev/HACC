@@ -2,6 +2,8 @@ package projectdev.projectgreen;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
@@ -13,17 +15,66 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
-public class Navigation extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class Navigation extends AppCompatActivity {
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.navNews:
+                    System.out.println("News");
+                    return true;
+                case R.id.navMap:
+                    System.out.println("Maps");
+                    return true;
+                case R.id.navProfile:
+                    System.out.println("Profile");
+                    return true;
+            }
+            return false;
+        }
+    };
+
+    private NavigationView.OnNavigationItemSelectedListener OnNavigationItemSelectedListener
+            = new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                // Handle navigation view item clicks here.
+                int id = item.getItemId();
+                if (id == R.id.nav_camera) {
+                    // Handle the camera action
+                    System.out.println("hello");
+                    startActivity(new Intent(Navigation.this, camActivity.class));
+                } else if (id == R.id.nav_gallery) {
+
+                } else if (id == R.id.nav_slideshow) {
+
+                } else if (id == R.id.nav_share) {
+
+                } else if (id == R.id.nav_send) {
+
+                }
+
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                drawer.closeDrawer(GravityCompat.START);
+                return true;
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.setTitle("Home");
         setContentView(R.layout.activity_navigation);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +84,8 @@ public class Navigation extends AppCompatActivity
             }
         });
 
+        */
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -40,7 +93,10 @@ public class Navigation extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setNavigationItemSelectedListener(OnNavigationItemSelectedListener);
+
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
     @Override
@@ -52,6 +108,7 @@ public class Navigation extends AppCompatActivity
             super.onBackPressed();
         }
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -77,27 +134,5 @@ public class Navigation extends AppCompatActivity
 
 
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-            System.out.println("hello");
-            startActivity(new Intent(Navigation.this, camActivity.class));
-        } else if (id == R.id.nav_gallery) {
 
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
     }
-}
