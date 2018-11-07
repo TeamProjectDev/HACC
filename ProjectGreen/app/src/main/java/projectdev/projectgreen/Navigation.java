@@ -6,6 +6,8 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -17,26 +19,35 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-public class Navigation extends AppCompatActivity {
 
+public class Navigation extends AppCompatActivity {
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment selectedFragment = null;
             switch (item.getItemId()) {
                 case R.id.navNews:
-                    System.out.println("News");
-                    return true;
+                    selectedFragment = new TabFragment();
+                    System.out.println("oof");
+                    break;
                 case R.id.navMap:
-                    System.out.println("Maps");
-                    return true;
+                    selectedFragment = new Tab2Fragment();
+                    System.out.println("oof5");
+                    break;
                 case R.id.navProfile:
-                    System.out.println("Profile");
-                    return true;
+                    selectedFragment = new Tab3Fragment();
+                    System.out.println("oof2");
+                    break;
             }
-            return false;
+
+            System.out.println(selectedFragment);
+            getSupportFragmentManager().beginTransaction().replace(R.id.container,
+                    selectedFragment).commit();
+
+            return true;
         }
     };
 
@@ -97,6 +108,9 @@ public class Navigation extends AppCompatActivity {
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+
+
     }
 
     @Override
@@ -131,6 +145,7 @@ public class Navigation extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 
 
 
