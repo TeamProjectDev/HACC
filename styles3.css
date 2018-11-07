@@ -1,0 +1,52 @@
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+#root {
+    background: linear-gradient(45deg, rgba(34,193,195,1) 0%, rgba(207,82,66,1) 20%, rgba(217,62,153,1) 50%, rgba(150,89,210,1) 80%, rgba(253,187,45,1) 100%);
+    background-size: 400% 400%;
+    animation: Gradient 20s ease infinite;
+}
+
+#uploadContainer {
+	display: inline-flex;
+	flex-wrap: wrap;
+	width: 100%;
+	height: 93%;
+}
+
+.cardContainer {
+	margin: 1rem;
+	border: 1px solid black;
+	width: 20rem;
+	height: 25rem;
+}
+
+.userCredit {
+	color: whitesmoke;
+	padding: 0.5rem 0 0 0.5rem;
+	margin: 0;
+	height: 2rem;
+	background: linear-gradient(270deg, rgba(241,216,250,1) 0%, rgba(250,213,255,1) 40%, rgba(93,228,255,1) 100%);
+}
+
+.imgContainer {
+	width: 100%;
+	height: 12rem;
+	background-position: center;
+	background-size: cover;
+}
+
+.tags {
+	width: 100%;
+    height: 2rem;
+    padding: 0.2em 0.2em 0;
+}
