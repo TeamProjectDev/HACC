@@ -54,9 +54,17 @@
 .cardContainer {
 	margin: 1rem;
 	width: 20rem;
-	height: 25rem;
+	min-height: 25rem;
 	overflow: hidden;
-    border-radius: 0.5rem;
+	border-radius: 0.5rem;
+	transition: all 0.75s;
+	box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
+}
+
+.cardContainer:hover {
+	cursor: pointer;
+    transform: translate3D(0, -4px, 0);
+    box-shadow: 2px 8px 45px rgba(0, 0, 0, .3);
 }
 
 .userCredit {
@@ -76,7 +84,7 @@
 
 .textContainer {
 	background-color: #f7f7f7;
-	height: 11em;
+	min-height: 11em;
 }
 
 .tags {

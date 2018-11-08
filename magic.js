@@ -26,24 +26,27 @@ var app = new Vue({
     data: {
         signedIn: false,
         header: {
-            projectDev: GetImage('images/scuffed23.png'),
-            other: 'other Products',
-            forumProjectDev: GetImage('../images/Logo_forums_edit.png'),
+            projectDev: GetImage('./images/scuffed23.png'),
+            other: 'Home',
+            forumProjectDev: GetImage('./images/Logo_forums_edit.png'),
             team: 'The Team',
             forum: 'Forums',
-            upload : 'The Upload'
+            upload : 'The Upload',
+            links : {
+                products : ['index.html','https://teamprojectdev.github.io/hawaii-project-coast/']
+            }
         },
         title: {
-            showCaseImage: 'images/plants/plant4.jpg',
+            showCaseImage: './images/plants/plant4.jpg',
             name: 'Project Grass',
             logo: GetImage('images/logo_temp.png'),
             type: 'Plant Identification Software'
         },
         showcase: {
             images: [
-                {image: 'images/plants/plant1.png', text:'help the enviroment with this app'},
-                {image: 'images/plants/plant2.jpg', text:'smells like woomy spirit'}, //GETIMAGE on this
-                {image: 'images/plants/plant3.jpg', text:'Get those Salmon Eggs BOI!'}
+                {image: './images/plants/plant1.png', text:'help the enviroment with this app'},
+                {image: './images/plants/plant2.jpg', text:'smells like woomy spirit'}, //GETIMAGE on this
+                {image: './images/plants/plant3.jpg', text:'Get those Salmon Eggs BOI!'}
             ],
             currentCounter: 0,
             leftArrow: '<',
@@ -62,17 +65,26 @@ var app = new Vue({
         },
         signUp : {
             slogan : 'Sign Up Today',
+            slogan2: 'Sign In',
             forms : [
                 {name:'First Name',type:'text'},
                 {name:'Last Name',type:'text'},
                 {name:'Email Address',type:'email'},
-                {name:'Username',type:'username'},
-                {name:'Password',type:'password'}
-            ] 
+                {name:'Password',type:'password'},
+                {name:'Username',type:'username'}
+            ],
+            buttonIn : 'Continue',
+            buttonUp : 'Sign Up'
         },
         forum: {
             start: 'Forums',
             startSlogan: 'Start your discussions here'
+        },
+        products : {
+            coast: {
+                name : 'Project Coast',
+                slogan : 'Discover Debris near your area'
+            }
         }
     },
     methods: {
