@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Sign In</title>
+</head>
+<body>
+    <div id="root">
+        <div id="signIn">
+            <h3 id="signUpSlogan">{{signUp.slogan2}}</h3>
+            <div id="signupStuff">
+                <input v-for="index in 2" :key="index" :placeholder="signUp.forms[signUp.forms.length-index].name" :type="signUp.forms[signUp.forms.length-index].type">
+                <a href class="button">{{signUp.buttonIn}}</a>
+            </div>
+        </div>
+
+
+        <div id="signUp">
+            <h3 id="signUpSlogan">{{signUp.slogan}}</h3>
+            <div id="signupStuff">
+                <input v-for="items in signUp.forms" :placeholder="items.name" :type="signUp.type">
+                <a href class="button">{{signUp.buttonUp}}</a>
+            </div>
+        </div>
+    </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="templateAPI.js"></script>
+        <script src="magic.js"></script>
+
+</body>
+</html>

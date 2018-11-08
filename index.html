@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- work on bar transition!!!!-->
 <html lang="en">
 <head>
     <meta charset="UTF-8"> 
@@ -11,15 +11,15 @@
     
     <div id="root">
 
-        <div id="header">
+        <div id="header" v-scroll="handleScroll">
 
             <span id="projectDev" v-html="header.projectDev"> </span>
 
             <span id="misc">
-
-                <p class="options">{{header.other}}</p>
-                <p class="options">{{header.team}}</p>
-            
+                <a class="options" href="./index.html">{{header.other}}</a>
+                <a class="options">{{header.team}}</a>
+                <a class="options" href="pages/forum.html">{{header.forum}}</a>
+                <a class="options" href="upload.html">{{header.upload}}</a>
             </span>
 
         </div>
@@ -47,17 +47,16 @@
                 <h2 id="slogan">{{main.slogan}}</h2>
                 <h3 id="sloganDetail">{{main.sloganDetail}}</h3>
                 
-                <div id="showCase" 
-                v-bind:style="{ 'background-image': 'url(' + showcase.images[showcase.currentCounter].image + ')' }">
-
-                    <p id="leftArrow" v-html="showcase.leftArrow" @click="prevImage()"></p>
-                    <p id="rightArrow" v-html="showcase.rightArrow" @click="nextImage()"></p> 
+                <span id="showCase" >
+                    <span class="showCasePicture" v-bind:style="{ 'background-image': 'url(' + showcase.images[showcase.currentCounter].image + ')' }"> </span>
+                    <p id="leftArrow" class="showCaseButton" v-html="showcase.leftArrow" @click="prevImage()"></p>
+                    <p id="rightArrow" class="showCaseButton" v-html="showcase.rightArrow" @click="nextImage()"></p> 
                     
                     <div id="showCaseText">
                         <p>{{showcase.images[showcase.currentCounter].text}}</p>
                     </div>
 
-                </div>
+                </span>
 
                 <download :text="main.downloadText" :link="main.downloadLink"></download>
 
@@ -69,13 +68,17 @@
 
                 <h4 id="recent">{{discover.recent}}</h4>
 
-                <div id="discoverShowCase" v-for="uploads in uploads()" 
-                v-html="template(uploads.discoveryLocation,uploads.discoveryDate,uploads.user,uploads.discoveredPlant,uploads.description)" 
-                >
+                <div id="discoverShowCase">
 
+                    <span class="post" v-for="uploads in uploads()" 
+                    v-html="homeTemplate(uploads.discoveryLocation,uploads.discoveryDate,uploads.user,uploads.discoveredPlant,uploads.description,uploads.photo)" >
+                    </span>
 
 
                 </div>
+
+                <a class="button" href="signup.html">{{signUp.slogan}}</a>
+                                
 
             </div>
 
