@@ -12,14 +12,15 @@
 <body>
 
     <div id="root">
+        
         <div id="headerForums">
             
             <span id="projectDev" v-html="header.forumProjectDev"> </span>
             
             <span id="misc">
-                <p class="optionsf">{{header.other}}</p>
-                <p class="optionsf">{{header.team}}</p>
-                <p class="optionsf">{{header.forum}}</p>
+                <a class="optionsf" href="../index.html">{{header.other}}</a>
+                <a class="optionsf" href="">{{header.team}}</a>
+                <a class="optionsf" href="forum.html">{{header.forum}}</a>
             </span>
 
         </div>
@@ -29,6 +30,7 @@
             <span id="forumStart">
                 <h1>{{forum.start}}</h1>
                 <p id="forumSlogan">{{forum.startSlogan}}</p>
+                <button class="button"> Create Post </button>
             </span>
 
             <div id="postContainer">

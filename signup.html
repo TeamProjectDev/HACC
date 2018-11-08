@@ -13,7 +13,7 @@
             <h3 id="signUpSlogan">{{signUp.slogan2}}</h3>
             <div id="signupStuff">
                 <input v-for="index in 2" :key="index" :placeholder="signUp.forms[signUp.forms.length-index].name" :type="signUp.forms[signUp.forms.length-index].type">
-                <a href class="button">{{signUp.buttonIn}}</a>
+                <button href class="button">{{signUp.buttonIn}}</a>
             </div>
         </div>
 
@@ -22,7 +22,7 @@
             <h3 id="signUpSlogan">{{signUp.slogan}}</h3>
             <div id="signupStuff">
                 <input v-for="items in signUp.forms" :placeholder="items.name" :type="signUp.type">
-                <a href class="button">{{signUp.buttonUp}}</a>
+                <button href class="button">{{signUp.buttonUp}}</button>
             </div>
         </div>
     </div>

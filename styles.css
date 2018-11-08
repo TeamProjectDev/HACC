@@ -188,12 +188,17 @@ body,html,#root {
 }
 
 .button {
+    border: none;
     display: table;
     margin: 2rem auto 0 auto;
     padding: 1rem 2rem;
     color: whitesmoke;
     background-color: #5ED4FF;
     border-radius: 2%;
+}
+
+.button:hover {
+    cursor: pointer;
 }
 
 a:link {
@@ -311,7 +316,7 @@ a:visited {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: -webkit-fill-available;
+    padding: 0.5em 0;
 }
 
 #signupStuff > input {

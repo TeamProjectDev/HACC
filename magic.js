@@ -14,7 +14,7 @@ Vue.directive('scroll', { //vue directive
       }
       window.addEventListener('scroll', f)
     }
-})
+});
 
 Vue.component('download', {
     props: ['text','link'],
@@ -28,7 +28,7 @@ var app = new Vue({
         header: {
             projectDev: GetImage('./images/scuffed23.png'),
             other: 'Home',
-            forumProjectDev: GetImage('./images/Logo_forums_edit.png'),
+            forumProjectDev: GetImage('../images/Logo_forums_edit.png'),
             team: 'The Team',
             forum: 'Forums',
             upload : 'The Upload',
@@ -38,7 +38,7 @@ var app = new Vue({
         },
         title: {
             showCaseImage: './images/plants/plant4.jpg',
-            name: 'Project Grass',
+            name: 'Project Green',
             logo: GetImage('images/logo_temp.png'),
             type: 'Plant Identification Software'
         },
@@ -64,7 +64,7 @@ var app = new Vue({
 
         },
         signUp : {
-            slogan : 'Sign Up Today',
+            slogan : 'Sign Up/Log in',
             slogan2: 'Sign In',
             forms : [
                 {name:'First Name',type:'text'},
@@ -155,7 +155,7 @@ var app = new Vue({
                 <p class="creator">${creator}</p>
                 <p class="forumTitle"> ${title} </p>
                 <p class="date"> ${date} </p>
-                <p class="commentNumber">${commentNumber}</p> 
+                <p class="commentNumber">${commentNumber} comments</p> 
             `
         },
         uploadTemplate: function(user,img,description) {
